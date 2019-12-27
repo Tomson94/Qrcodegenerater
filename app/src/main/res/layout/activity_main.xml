@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:padding="30dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_name"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:hint="Enter Name" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_palce"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:hint="Enter Place" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_age"
+        android:inputType="number"
+        android:maxLength="3"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:hint="Enter Age" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/generate"
+        android:layout_gravity="center"
+        android:text="Create QR"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/image"/>
+
+</LinearLayout>

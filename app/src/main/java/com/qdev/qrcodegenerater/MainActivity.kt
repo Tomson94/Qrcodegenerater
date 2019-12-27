@@ -1,11 +1,13 @@
 package com.qdev.qrcodegenerater
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.media.MediaScannerConnection
 import android.os.Environment
 
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -36,15 +38,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val permissions = arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE,android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        ActivityCompat.requestPermissions(this, permissions,0)
+      //  val permissions = arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE,android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+     //   ActivityCompat.requestPermissions(this, permissions,0)
         showQr =this.image
         edtage = this.edt_age
         edtname = this.edt_name
         edtplace = this.edt_palce
         generateQr = this.generate
 
-        generateQr?.setOnClickListener {
+        generateQr?.setOnClickListener {it->
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm?.hideSoftInputFromWindow(it.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
             if (edtname?.text.toString().length == 0) {
                 Toast.makeText(this@MainActivity, "Enter Name!", Toast.LENGTH_SHORT).show()
             }else if (edtplace?.text.toString().length == 0) {
